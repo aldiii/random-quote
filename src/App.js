@@ -1,7 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Header from "./components/Header";
 import "./App.css";
 import Quote from "./components/Quote";
+import Button from "./components/Button";
 import quotesApi from "./api/quotesAPI";
 
 const getRandomQuoteIndex = (length) => Math.floor(Math.random() * length);
@@ -12,6 +13,16 @@ function App() {
   const [previousQuoteId, setPreviousQuoteId] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
+
+  const handlePrevBtnClick = useCallback(() => {
+    setActualQuoteId(previousQuoteId);
+    setPreviousQuoteId(null);
+  }, [previousQuoteId]);
+
+  const handleNextBtnClick = useCallback(() => {
+    setPreviousQuoteId(actualQuoteId);
+    setActualQuoteId(getRandomQuoteIndex(quotes.length));
+  }, [actualQuoteId]);
 
   useEffect(() => {
     quotesApi
@@ -38,25 +49,13 @@ function App() {
         <Quote randomQuote={quotes[actualQuoteId]} />
       )}
       <div className="button-group">
-        <button
-          className="btn"
+        <Button
           disabled={previousQuoteId === null}
-          onClick={() => {
-            setActualQuoteId(previousQuoteId);
-            setPreviousQuoteId(null);
-          }}
+          handleClick={handlePrevBtnClick}
         >
           Poprzedni
-        </button>
-        <button
-          className="btn"
-          onClick={() => {
-            setPreviousQuoteId(actualQuoteId);
-            setActualQuoteId(getRandomQuoteIndex(quotes.length));
-          }}
-        >
-          Następny
-        </button>
+        </Button>
+        <Button handleClick={handleNextBtnClick}>Następny</Button>
       </div>
     </div>
   );
