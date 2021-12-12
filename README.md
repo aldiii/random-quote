@@ -1,3 +1,7 @@
+## General info
+
+The goal was to prepare an application that will retrieve quotes from the API, and will display a random quote. App has a button that will allow you to draw the next quote and a button that will allow you to go back to the previous quote.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
