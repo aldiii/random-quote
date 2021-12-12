@@ -1,0 +1,11 @@
+.quote {
+  margin: 10vw 10vh;
+}
+.quote p {
+  font-size: 3.5rem;
+  line-height: 150%;
+  margin: 0.5em auto;
+}
+.quote cite {
+  font-size: 2rem;
+}
