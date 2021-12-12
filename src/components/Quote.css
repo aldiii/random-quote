@@ -1,8 +1,8 @@
 .quote {
-  margin: 10vw 10vh;
+  margin: 10vh 5vw;
 }
 .quote p {
-  font-size: 3.5rem;
+  font-size: 3rem;
   line-height: 150%;
   margin: 0.5em auto;
 }

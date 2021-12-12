@@ -2,7 +2,23 @@
   text-align: center;
   margin: 5vh;
 }
-.App-header {
-  font-size: 0.8rem;
-  text-align: left;
+.button-group {
+  display: flex;
+  justify-content: space-around;
+}
+.btn {
+  color: inherit;
+  background: transparent;
+  border: 2px solid var(--white);
+  border-radius: 10px;
+  padding: 0.5em 1.5em;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+}
+.btn:hover {
+  color: var(--dark-violet);
+  background-color: var(--white);
+}
+.btn:disabled {
+  opacity: 0.4;
 }
