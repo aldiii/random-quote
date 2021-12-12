@@ -1,3 +1,8 @@
 .App {
   text-align: center;
+  margin: 5vh;
+}
+.App-header {
+  font-size: 0.8rem;
+  text-align: left;
 }
